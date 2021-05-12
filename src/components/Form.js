@@ -133,10 +133,14 @@ function Form() {
     event.preventDefault();
     document.getElementById("result").style.display = "none";
     document.getElementById("form").style.display = "block";
-    document.getElementById("gender").value = "Select Gender :";
+    document.getElementById("gender").value = "Male";
     document.getElementById("age").value = "";
     document.getElementById("height").value = "";
     document.getElementById("weight").value = "";
+  }
+  function back(event) {
+    document.getElementById("result").style.visibility = "none";
+    document.getElementById("form").style.visibility = "block";
   }
   return (
     <div className="container my-3">
@@ -194,7 +198,7 @@ function Form() {
           <br />
         </div>
         <div id="result">
-          <h3>Results :</h3>
+          <h3>Health Results :</h3>
           <br />
           <div className="card " style={{ width: "20rem" }} id="card">
             <div className="card-body">
@@ -218,6 +222,8 @@ function Form() {
               </h6>
             </div>
           </div>
+          <br />
+          <button className="btn btn-info" onClick={back}>Back To Home</button>
           <br />
           <br />
         </div>
